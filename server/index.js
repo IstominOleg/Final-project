@@ -96,12 +96,11 @@ app.post('/order/:basket_id', (req, res) => {
     newOrder.phone_number,
     newOrder.delivery_address, 
     newOrder.pickup_delivery,
-    newOrder.basket_id,
-    newOrder.date_time_order
+    newOrder.basket_id
   ]
 
   connection.query(`
-  INSERT INTO baskets (first_name, last_name, phone_number, delivery_address, pickup_delivery, basket_id, date_time_order)
+  INSERT INTO orders (first_name, last_name, phone_number, delivery_address, pickup_delivery, basket_id, date_time_order)
   VALUES (?, NOW());`, [orderDb],
   (err, data) => {
     if (err) {
@@ -109,7 +108,7 @@ app.post('/order/:basket_id', (req, res) => {
       return
     }
     connection.query(`
-      SELECT * FROM baskets WHERE basket_id = '${newBasket.basket_id}'
+      SELECT * FROM orders WHERE basket_id = '${newBasket.basket_id}'
     `, (err2, data2) => {
       if (err2) {
         res.status(500).json({ message: "SOORRYYYY!!!!", err2 })
