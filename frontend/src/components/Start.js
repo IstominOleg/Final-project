@@ -13,14 +13,17 @@ export default class Start extends Component {
   render() {
     return (
     <div>
-      <Header title="Типо название" />
-      <div>
-        <CardRestorant title="Pizza" desc="Vkysnai pizza" onClick={() => {this.navigateToRest("pizza")}}/>
-        <CardRestorant title="Sushi" desc="Vkysnai Sushi" onClick={() => {this.navigateToRest("sushi")}}/>
-        <CardRestorant title="Chicken" desc="Vkysnai Chicken" onClick={() => {this.navigateToRest("chicken")}}/>
-        {/* <Pizza />
-        <Sushi />
-        <Chicken /> */}
+      <Header title="Типо название лого и все такое прочее" />
+      <div className="cards_block">
+        <div className="card_restaurant">
+          <CardRestorant title="Pizza" image="images/pizza.jpg" desc="Vkysnai pizza" onClick={() => {this.navigateToRest("pizza")}}/>
+        </div>
+        <div className="card_restaurant">
+          <CardRestorant title="Sushi" desc="Vkysnai Sushi" onClick={() => {this.navigateToRest("sushi")}}/>
+        </div>
+        <div className="card_restaurant">
+          <CardRestorant title="Chicken" desc="Vkysnai Chicken" onClick={() => {this.navigateToRest("chicken")}}/>
+        </div>
       </div>
       <Footer />
     </div>

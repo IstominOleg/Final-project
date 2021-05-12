@@ -4,10 +4,16 @@ export default class CardRestorant extends Component {
   render() {
     const {title, image, desc, onClick} = this.props;
     return (
-    <div onClick={onClick}>
-      {title}
-      <img src={image} />
-      {desc}
+    <div className="card" onClick={onClick}>
+      <div>
+        {title}
+      </div>
+      <div>
+        <img className="img_pizza" src={image} alt="" />
+      </div>
+      <div>
+        {desc}
+      </div>
     </div>
     )
   }

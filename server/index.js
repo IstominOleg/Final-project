@@ -24,7 +24,7 @@ connection.connect((err) => {
 
 app.get('/menu/:restaurant_id', (req, res) => {
   connection.query(`
-    SELECT * FROM menu WHERE restaurant_id = ${req.params.restaurant_id}
+    SELECT * FROM menu WHERE restaurant_id = '${req.params.restaurant_id}'
   `, (err, data) => {
     if (err) {
       res.status(500).json({ message: "SOORRYYYY!!!!", err })
@@ -48,7 +48,7 @@ app.get('/basket/:basket_id', (req, res) => {
 
 app.get('/order/:basket_id', (req, res) => {
   connection.query(`
-    SELECT * FROM orders WHERE basket_id = ${req.params.basket_id}
+    SELECT * FROM orders WHERE basket_id = '${req.params.basket_id}'
   `, (err, data) => {
     if (err) {
       res.status(500).json({ message: "SOORRYYYY!!!!", err })
