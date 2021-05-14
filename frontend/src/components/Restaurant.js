@@ -20,24 +20,52 @@ export default class Restorant extends Component {
       })
       .catch(error => console.log('error', error));
   }
+  handlClick = (idx) => {
+    
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let raw = JSON.stringify({
+      dish_name: this.state.menu[idx].name,
+      quantity: 1,
+      price: this.state.menu[idx].price,
+      basket_id: localStorage.getItem("basket_id"),
+      restaurant_id: this.state.menu[idx].restaurant_id
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:3010/basket", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
   render() {
     const {restaurant_id} = this.props.match.params;
     let name;
+    let basket;
     if (restaurant_id === "pizza") {
       name = "Пиццерия"
     } else if (restaurant_id === "sushi") {
       name = "Суши чето там"
     } else if (restaurant_id === "chicken") {
       name = "Про курицу ресторан"
+    } else {
+      basket = "basket"
     }
     return (
     <div>
       <div>
-        <Header title={name} />
+        <Header title={name} basket={basket}/>
       </div>
       <div>
         <ul>
-          {this.state.menu.map((elem) => {
+          {this.state.menu.map((elem, idx) => {
             return (
               <li key={elem.id}>
                 <div className="card_menu">
@@ -50,6 +78,8 @@ export default class Restorant extends Component {
                   <div>
                     {elem.description}
                   </div>
+                  <div><span>-</span>Кол-во<span>+</span></div>
+                  <div type="button" onClick={() => this.handlClick(idx)}>Добавить в корзину</div>
                 </div>
               </li>
             )

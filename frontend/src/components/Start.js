@@ -13,7 +13,7 @@ export default class Start extends Component {
   render() {
     return (
     <div>
-      <Header title="Типо название лого и все такое прочее" />
+      <Header title="Типо название лого и все такое прочее" basket="basket" />
       <div className="cards_block">
         <div className="card_restaurant">
           <CardRestorant title="Pizza" image="images/pizza.jpg" desc="Vkysnai pizza" onClick={() => {this.navigateToRest("pizza")}}/>
