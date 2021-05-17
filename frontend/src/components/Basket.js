@@ -37,6 +37,26 @@ export default class Basket extends Component {
         <Header title="Корзина"/>
       </div>
       <div>
+      <ul>
+          {this.state.basket.map((elem, idx) => {
+            return (
+              <li key={elem.id}>
+                <div className="card_menu">
+                  <div>
+                    {elem.dish_name}
+                  </div>
+                  <div>
+                    Стоймость: {elem.price*elem.quantity}
+                  </div>
+                  <div>
+                    Кол-во: {elem.quantity}
+                  </div>
+                  <div type="button" onClick={() => this.handlClick(idx)}>Убрать из корзины</div>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </div>
     )

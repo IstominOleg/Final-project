@@ -7,8 +7,8 @@ export default class Header extends Component {
     <div className="header">
       <div>
         <Link to="/">
-          лого
-          <img className="logo" src="https://www.clipartmax.com/png/middle/112-1129793_healthy-food-logo-png.png" alt="Logo"/>
+          <div className="logo">Order food</div>
+          {/* <img className="logo" src="https://www.clipartmax.com/png/middle/112-1129793_healthy-food-logo-png.png" alt="Logo"/> */}
         </Link>
       </div>
       <div>
