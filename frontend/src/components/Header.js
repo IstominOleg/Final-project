@@ -8,7 +8,6 @@ export default class Header extends Component {
       <div>
         <Link to="/">
           <div className="logo">Order food</div>
-          {/* <img className="logo" src="https://www.clipartmax.com/png/middle/112-1129793_healthy-food-logo-png.png" alt="Logo"/> */}
         </Link>
       </div>
       <div>
@@ -16,8 +15,7 @@ export default class Header extends Component {
       </div>
       <div>
         <Link to="/basket">
-          Корзина
-          <img className="basket" src="https://img1.freepng.ru/20171220/jpe/shopping-cart-png-5a3a8fca5f1485.3449050215137873383895.jpg" alt="Basket"/>
+          <img className="basket" src="https://img.icons8.com/pastel-glyph/2x/shopping-basket-2--v2.png" alt="Basket"/>
         </Link>
       </div>
     </div>

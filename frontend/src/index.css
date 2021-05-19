@@ -67,7 +67,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	text-align: center;
 	margin: auto;
 	/* background-color: rgb(102, 226, 112); */
-	background: url('/src/images/pizza.jpg') 50%/cover no-repeat;
 	position: relative;
 	transition-duration: 1s;
 	bottom: 0px;
@@ -77,6 +76,15 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	bottom: 10px;
 	box-shadow: 0px 0px 30px 2px gray;
 	transition-duration: 0.5s;
+}
+.pizza_bg {
+	background: url('/src/images/pizza.jpg') 50%/cover no-repeat;
+}
+.sushi_bg {
+	background: url('/src/images/sushi.jpg') 50%/cover no-repeat;
+}
+.chicken_bg {
+	background: url('/src/images//chicken.png') 50%/cover no-repeat;
 }
 .card {
 	/* width: 100%; */
@@ -93,22 +101,26 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	background-color: #F7F2E7;
 	width: 100%;
 	height: 500px;
-	border: 1px solid red;
 	display: flex;
+	justify-content: center;
 }
-/* .img_pizza {
-	width: 200px;
-	height: 100px;
-	background-position: center;
-	background-size: cover;
-	border-radius: 10px;
-} */
 
 .card_menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	width: 150px;
 	height: 150px;
 	margin: 40px;
-	border: 1px solid rgb(56, 46, 46);
+	border: 1px solid red;
+	transition-duration: 1s;
+}
+.card_menu:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+	transition-duration: 1s;
 }
 ul {
 	display: flex;

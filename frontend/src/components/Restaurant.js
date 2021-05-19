@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer'
 
 export default class Restorant extends Component {
   state = {
@@ -50,11 +51,11 @@ export default class Restorant extends Component {
     let name;
     let basket;
     if (restaurant_id === "pizza") {
-      name = "Пиццерия"
+      name = "Pizza Verona"
     } else if (restaurant_id === "sushi") {
-      name = "Суши чето там"
+      name = "Arigato"
     } else if (restaurant_id === "chicken") {
-      name = "Про курицу ресторан"
+      name = "Kannam Chicken"
     } else {
       basket = "basket"
     }
@@ -63,7 +64,7 @@ export default class Restorant extends Component {
       <div>
         <Header title={name} basket={basket}/>
       </div>
-      <div>
+      <div className="cards_block">
         <ul>
           {this.state.menu.map((elem, idx) => {
             return (
@@ -73,7 +74,7 @@ export default class Restorant extends Component {
                     {elem.name}
                   </div>
                   <div>
-                    {elem.price}
+                    {elem.price} руб.
                   </div>
                   <div>
                     {elem.description}
@@ -85,6 +86,9 @@ export default class Restorant extends Component {
             )
           })}
         </ul>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
     )

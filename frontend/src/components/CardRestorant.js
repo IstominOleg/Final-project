@@ -9,7 +9,6 @@ export default class CardRestorant extends Component {
         {title}
       </div>
       <div>
-        <img className="img_pizza" src={image} alt="" />
       </div>
       <div>
         {desc}
