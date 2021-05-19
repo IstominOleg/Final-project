@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 export default class Basket extends Component {
   state = {
@@ -34,29 +35,37 @@ export default class Basket extends Component {
     return (
     <div>
       <div>
-        <Header title="Корзина"/>
+        <Header title="Basket"/>
       </div>
-      <div>
-      <ul>
+      <div className="cards_block_basket">
+      <ul className="list_basket">
           {this.state.basket.map((elem, idx) => {
             return (
               <li key={elem.id}>
                 <div className="card_menu">
-                  <div>
-                    {elem.dish_name}
-                  </div>
-                  <div>
-                    Стоймость: {elem.price*elem.quantity}
-                  </div>
-                  <div>
-                    Кол-во: {elem.quantity}
-                  </div>
-                  <div type="button" onClick={() => this.handlClick(idx)}>Убрать из корзины</div>
-                </div>
+                    <div className="card_menu_col">
+                      <div>
+                        {elem.dish_name}
+                      </div>&nbsp;&nbsp;
+                      <div>
+                        Кол-во: {elem.quantity}
+                      </div>&nbsp;&nbsp;
+                      <div>
+                        Стоймость: {elem.price*elem.quantity}
+                      </div>
+                    </div>
+                    <div className="card_menu_col">
+                      <div className="button" type="button" onClick={() => this.handlClick(idx)}>Убрать из корзины</div>
+                    </div>
+                </div> 
               </li>
             )
           })}
         </ul>
+      </div>
+      <div className="submit_button" type="button">Оформить заказ</div>
+      <div>
+        <Footer />
       </div>
     </div>
     )

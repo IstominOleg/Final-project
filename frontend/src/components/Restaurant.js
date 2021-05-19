@@ -65,27 +65,33 @@ export default class Restorant extends Component {
         <Header title={name} basket={basket}/>
       </div>
       <div className="cards_block">
-        <ul>
-          {this.state.menu.map((elem, idx) => {
-            return (
-              <li key={elem.id}>
-                <div className="card_menu">
-                  <div>
-                    {elem.name}
+        <div className="cards_wraper">
+          <ul>
+            {this.state.menu.map((elem, idx) => {
+              return (
+                <li key={elem.id}>
+                  <div className="card_menu">
+                    <div className="card_menu_col">
+                      <div>
+                        {elem.name}
+                      </div>&nbsp;
+                      <div>
+                        {elem.description}
+                      </div>&nbsp;
+                    </div>
+                    <div className="card_menu_col">
+                      <div>
+                        Цена: {elem.price} руб.
+                      </div>
+                      {/* <div><span>-</span>Кол-во<span>+</span></div> */}
+                      <div className="button" type="button" onClick={() => this.handlClick(idx)}>Добавить в корзину</div>
+                    </div>
                   </div>
-                  <div>
-                    {elem.price} руб.
-                  </div>
-                  <div>
-                    {elem.description}
-                  </div>
-                  <div><span>-</span>Кол-во<span>+</span></div>
-                  <div type="button" onClick={() => this.handlClick(idx)}>Добавить в корзину</div>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
       <div>
         <Footer />

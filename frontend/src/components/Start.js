@@ -15,15 +15,25 @@ export default class Start extends Component {
     <div>
       <Header title="" basket="basket" />
       <div className="cards_block">
-        <div className="card_restaurant pizza_bg">
-          <CardRestorant title="" desc="" onClick={() => {this.navigateToRest("pizza")}}/>
+        <div>
+          <div className="name">Pizza Verona</div>
+          <div className="card_restaurant pizza_bg">
+            <CardRestorant title="" desc="" onClick={() => {this.navigateToRest("pizza")}}/>
+          </div>
         </div>
-        <div className="card_restaurant sushi_bg">
-          <CardRestorant title="" desc="" onClick={() => {this.navigateToRest("sushi")}}/>
+        <div>
+          <div className="name">Arigato</div>
+          <div className="card_restaurant sushi_bg">
+            <CardRestorant title="" desc="" onClick={() => {this.navigateToRest("sushi")}}/>
+          </div>
         </div>
-        <div className="card_restaurant chicken_bg">
-          <CardRestorant title="" desc="" onClick={() => {this.navigateToRest("chicken")}}/>
+        <div>
+          <div className="name">Kannam Chicken</div>
+          <div className="card_restaurant chicken_bg">
+            <CardRestorant title="" desc="" onClick={() => {this.navigateToRest("chicken")}}/>
+          </div>
         </div>
+        
       </div>
       <Footer />
     </div>
