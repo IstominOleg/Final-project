@@ -128,7 +128,6 @@ app.post('/order/:basket_id', (req, res) => {
 // app.delete('/users/:id', (req, res) => {
 //   const idOfusers = parseInt(req.params.id);
 //   // const productIdx = products.findIndex((product) => product.id === idOfProducts);
-
 //   // if (productIdx !== -1) {
 //   //     products.splice(productIdx, 1)
 //   //     res.json(products);

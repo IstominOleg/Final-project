@@ -74,7 +74,7 @@ export default class Basket extends Component {
           })}
         </ul>
       </div>
-      <div>
+      <div className="checkout">
         <Modal />
       </div>
       <div>
