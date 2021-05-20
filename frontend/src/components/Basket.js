@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import Modal from './Modal'
 
 export default class Basket extends Component {
   state = {
@@ -31,6 +32,16 @@ export default class Basket extends Component {
       })
       .catch(error => console.log('error', error));
   }
+
+  handlClick = (idx) => {
+    const newBasket = [...this.state.basket]
+    newBasket.splice(idx, 1)
+    this.setState({basket: newBasket})
+  }
+  modalOpen = () => {
+
+  }
+
   render() {
     return (
     <div>
@@ -63,7 +74,9 @@ export default class Basket extends Component {
           })}
         </ul>
       </div>
-      <div className="submit_button" type="button">Оформить заказ</div>
+      <div>
+        <Modal />
+      </div>
       <div>
         <Footer />
       </div>

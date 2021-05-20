@@ -4,7 +4,8 @@ import Footer from './Footer'
 
 export default class Restorant extends Component {
   state = {
-    menu: []
+    menu: [],
+    basket: []
   }
   componentDidMount() {
     let identifierRestaurant = this.props.match.params.restaurant_id;
@@ -20,6 +21,18 @@ export default class Restorant extends Component {
         this.setState({ menu: result})
       })
       .catch(error => console.log('error', error));
+    
+      const requestOptions2 = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      fetch(`http://localhost:3010/basket/${localStorage.getItem("basket_id")}`, requestOptions2)
+        .then(response => response.json())
+        .then(result => {
+          this.setState({basket: result})
+        })
+        .catch(error => console.log('error', error));
   }
   handlClick = (idx) => {
     
@@ -43,7 +56,9 @@ export default class Restorant extends Component {
 
     fetch("http://localhost:3010/basket", requestOptions)
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => {
+        this.setState({basket: result})
+      })
       .catch(error => console.log('error', error));
   }
   render() {
@@ -62,7 +77,7 @@ export default class Restorant extends Component {
     return (
     <div>
       <div>
-        <Header title={name} basket={basket}/>
+        <Header title={name} basket={this.state.basket}/>
       </div>
       <div className="cards_block">
         <div className="cards_wraper">
