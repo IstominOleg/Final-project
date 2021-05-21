@@ -29,7 +29,7 @@ export default class Start extends Component {
   render() {
     return (
     <div>
-      <Header title="" basket={this.state.basket}/>
+      <Header title="Здавствуйте, мы готовы принять Ваш заказ!" basket={this.state.basket}/>
       <div className="cards_block">
         <div>
           <div className="name">Pizza Verona</div>
